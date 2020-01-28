@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+env
+
+for tag in 1-alpine alpine latest; do
+	docker tag $IMAGE_NAME $DOCKER_REPO:$tag
+	docker push $DOCKER_REPO:$tag
+done
